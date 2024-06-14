@@ -1,0 +1,18 @@
+name: Deploy Hello World Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Deploy to Server
+      run: |
+        # Add deployment commands here
+        # For example, if deploying to an FTP server:
+        # ftp -av --remove-source-files $FTP_SERVER $DEPLOY_PATH
